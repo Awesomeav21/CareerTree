@@ -1,8 +1,12 @@
 import tkinter as tk
 from tkinter import simpledialog, messagebox, scrolledtext
 import openai
+import os 
 
-openai.api_key = ''
+
+openai_api_key = os.getenv("OPENAI_API_KEY").strip()
+openai.api_key = openai_api_key
+print(openai_api_key)
 
 # Store conversation history
 conversation_history = []
